@@ -22,15 +22,15 @@ const WeatherContainer = ({ weather }) => {
     }
 
     const weatherIcons = {
-        "clear sky" : "./src/assets/clear_sky.svg",
-        "few clouds" : "./src/assets/few_clouds.svg",
-        "scattered clouds" : "./src/assets/scattered_clouds.svg",
-        "broken clouds" : "./src/assets/broken_clouds.svg",
-        "shower rain" : "./src/assets/shower_rain.svg",
-        "rain" : "./src/assets/rain.svg",
-        "thunderstorm" : "./src/assets/thunderstorm.svg",
-        "snow" : "./src/assets/snow.svg",
-        "mist" : "./src/assets/mist.svg",
+        "clear sky" : "/clear_sky.svg",
+        "few clouds" : "/few_clouds.svg",
+        "scattered clouds" : "/scattered_clouds.svg",
+        "broken clouds" : "/broken_clouds.svg",
+        "shower rain" : "/shower_rain.svg",
+        "rain" : "/rain.svg",
+        "thunderstorm" : "/thunderstorm.svg",
+        "snow" : "/snow.svg",
+        "mist" : "/mist.svg",
     }
 
     return (
@@ -42,9 +42,9 @@ const WeatherContainer = ({ weather }) => {
                     <div className="w-full grid grid-cols-2 items-start relative">
                         <div>
                             <h1 className="text-[3rem]">{changeUnitTemp(weather.main.temp)}</h1>
-                            <WeatherStats icon="./src/assets/wind.png" value={weather.wind.speed} unit="m/s" />
-                            <WeatherStats icon="./src/assets/humidity.png" value={weather.main.humidity} unit="%" />
-                            <WeatherStats icon="./src/assets/pressure.png" value={weather.main.pressure} unit="hPA" />
+                            <WeatherStats icon="/wind.svg" value={weather.wind.speed} unit="m/s" />
+                            <WeatherStats icon="/humidity.svg" value={weather.main.humidity} unit="%" />
+                            <WeatherStats icon="/pressure.svg" value={weather.main.pressure} unit="hPA" />
                         </div>
                         <picture className="absolute -top-8 -right-2">
                             <img className="w-[140px]" src={weatherIcons[weather.weather[0].description]} alt="Weather Icon" />
