@@ -25,7 +25,7 @@ function App() {
     }, []);
 
     return (
-        <main className='bg-[radial-gradient(50%_50%_at_50%_50%,_#D5F3FF_0%,_#51B4E8_99.99%)] font-["Lato"] h-screen flex flex-col justify-center items-center p-4 gap-12'>
+        <main className='bg-[radial-gradient(50%_50%_at_50%_50%,_#D5F3FF_0%,_#51B4E8_99.99%)] font-["Lato"] h-screen flex flex-col justify-center items-center p-2'>
             {weather === null ? (
                 <section className="bg-[#54B6E9] h-screen w-screen flex flex-col justify-center items-center gap-2">
                     <picture>
