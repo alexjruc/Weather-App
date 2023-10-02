@@ -36,21 +36,21 @@ const WeatherContainer = ({ weather }) => {
     return (
         <section className="w-full h-full grid grid-rows-[auto_1fr] justify-center items-center">
             <WeatherFinder />
-            <div className="flex flex-col gap-8 text-center justify-center items-center">
-                <div className='w-[300px] h-[200px] flex flex-col justify-center items-center gap-4 text-center text-[#026EED] rounded-3xl '>
-                    <img className="absolute w-max" src="/bg-card.png" alt="" />
-                    <div className="w-full grid grid-cols-2 items-start relative">
-                        <div>
-                            <h1 className="text-[3rem]">{changeUnitTemp(weather.main.temp)}</h1>
+            <div className="flex flex-col gap-8 text-center justify-center items-center p-2">
+                <div className='w-[300px] h-[200px] flex flex-col justify-center items-center gap-2 text-center text-[#026EED] rounded-3xl md:w-[400px] md:h-[280px]'>
+                    <img className="absolute w-max md:w-[400px] md:h-[280px]" src="/bg-card.png" alt="" />
+                    <div className="w-full grid grid-cols-2 relative p-4">
+                        <div className="grid justify-center items-center">
+                            <h1 className="text-[3rem] md:text-[5rem]">{changeUnitTemp(weather.main.temp)}</h1>
                             <WeatherStats icon="/wind.svg" value={weather.wind.speed} unit="m/s" />
                             <WeatherStats icon="/humidity.svg" value={weather.main.humidity} unit="%" />
                             <WeatherStats icon="/pressure.svg" value={weather.main.pressure} unit="hPA" />
                         </div>
-                        <picture className="absolute -top-8 -right-2">
-                            <img className="w-[140px]" src={weatherIcons[weather.weather[0].description]} alt="Weather Icon" />
+                        <picture className="absolute -top-8 -right-2  md:right-4">
+                            <img className="w-[140px] md:w-[160px]" src={weatherIcons[weather.weather[0].description]} alt="Weather Icon" />
                         </picture>
                     </div>
-                    <div className="w-full flex justify-between px-4 font-semibold z-10">
+                    <div className="w-full flex justify-between px-6 font-semibold z-10">
                         <h3>
                             {weather.name}, {weather.sys.country}
                         </h3>
