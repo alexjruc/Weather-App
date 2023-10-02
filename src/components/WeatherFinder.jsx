@@ -24,7 +24,7 @@ const WeatherFinder = () => {
     const handleDarkMode = () => {
         setIsDark(!isDark);
         
-        if(isDark){
+        if(!isDark){
             document.querySelector(".bxs-toggle-left").style.display = "none";
             document.querySelector(".bxs-toggle-right").style.display = "block";
             document.body.classList.add("dark")
