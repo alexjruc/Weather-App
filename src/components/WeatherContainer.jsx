@@ -36,7 +36,7 @@ const WeatherContainer = ({ weather }) => {
         <section className="w-full h-full grid grid-rows-[auto_1fr] justify-center items-center">
             <WeatherFinder />
             <div className="flex flex-col gap-8 text-center justify-center items-center p-2">
-                <div className='w-[300px] h-[200px] flex flex-col justify-center items-center gap-2 text-center text-[#026EED] rounded-3xl md:w-[400px] md:h-[280px]'>
+                <div className='w-[300px] h-[200px] flex flex-col justify-center items-center gap-2 text-center text-[#026EED] rounded-3xl md:w-[400px] md:h-[280px] dark:text-[#5836B3]'>
                     <img className="absolute w-max md:w-[400px] md:h-[280px]" src="/bg-card.png" alt="" />
                     <div className="w-full grid grid-cols-2 relative p-4">
                         <div className="grid justify-center items-center">
@@ -45,18 +45,18 @@ const WeatherContainer = ({ weather }) => {
                             <WeatherStats icon="/humidity.svg" value={weather.main.humidity} unit="%" />
                             <WeatherStats icon="/pressure.svg" value={weather.main.pressure} unit="hPA" />
                         </div>
-                        <picture className="absolute -top-8 -right-2  md:right-4">
+                        <picture className="absolute -top-4 right-0  md:right-4">
                             <img className="w-[140px] md:w-[160px]" src={weatherIcons[weather.weather[0].description]} alt="Weather Icon" />
                         </picture>
                     </div>
-                    <div className="w-full flex justify-between px-6 font-semibold z-10">
+                    <div className="w-full flex justify-between px-6 pb-5 font-semibold z-10 md:pb-8">
                         <h3>
                             {weather.name}, {weather.sys.country}
                         </h3>
                         <h4 className="capitalize">{weather.weather[0].description}</h4>
                     </div>
                 </div>
-                <button onClick={handleClickTemp} className="bg-[#38A1D8] w-[150px] px-4 py-1 rounded-lg text-white">Cambiar a F°</button>
+                <button onClick={handleClickTemp} className="bg-[#38A1D8] w-[150px] px-4 py-1 rounded-lg text-white dark:bg-[#7D69F1]">Cambiar a F°</button>
             </div>
         </section>
     );
