@@ -3,8 +3,7 @@ import WeatherStats from "./WeatherStats";
 import WeatherFinder from "./WeatherFinder";
 
 const WeatherContainer = ({ weather }) => {
-    console.log(weather);
-
+    
     const [iscelsius, setIscelsius] = useState(true);
 
     const changeUnitTemp = (temp) => {
