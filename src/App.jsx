@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
 import WeatherContainer from "./components/WeatherContainer";
+import WeatherAppHeader from "./components/WeatherAppHeader";
 
 function App() {
     const [weather, setWeather] = useState(null);
@@ -26,6 +27,7 @@ function App() {
 
     return (
         <main className='bg-[radial-gradient(50%_50%_at_50%_50%,_#D5F3FF_0%,_#51B4E8_99.99%)] dark:bg-[radial-gradient(50%_50%_at_50%_50%,_#53388F_0%,_#2F2958_100%)] font-["Lato"] h-screen flex flex-col justify-center items-center p-2'>
+            <WeatherAppHeader />
             {weather === null ? (
                 <section className="bg-[#54B6E9] h-screen w-screen flex flex-col justify-center items-center gap-2">
                     <picture>

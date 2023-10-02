@@ -1,6 +1,5 @@
 import { useState } from "react";
 import WeatherStats from "./WeatherStats";
-import WeatherFinder from "./WeatherFinder";
 
 const WeatherContainer = ({ weather }) => {
     
@@ -33,8 +32,7 @@ const WeatherContainer = ({ weather }) => {
     }
 
     return (
-        <section className="w-full h-full grid grid-rows-[auto_1fr] justify-center items-center">
-            <WeatherFinder />
+        <section className="w-full h-full grid  justify-center items-center">
             <div className="flex flex-col gap-8 text-center justify-center items-center p-2">
                 <div className='w-[300px] h-[200px] flex flex-col justify-center items-center gap-2 text-center text-[#026EED] rounded-3xl md:w-[400px] md:h-[280px] dark:text-[#5836B3]'>
                     <img className="absolute w-max md:w-[400px] md:h-[280px]" src="/bg-card.png" alt="" />

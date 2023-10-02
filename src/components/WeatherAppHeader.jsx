@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useState } from "react";
 
-const WeatherFinder = () => {
+const WeatherAppHeader = ({weather}) => {
 
-    const [weatherCityFound, setWeatherCityFound] = useState("")
+    const [weatherCityFound, setWeatherCityFound] = useState(null)
     const [isDark, setIsDark] = useState(false)
     
     const findCity = (e) => {
@@ -15,10 +15,11 @@ const WeatherFinder = () => {
                 .get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`)
                     .then(({ data }) => setWeatherCityFound((data)))
                     .catch((err) => console.log(err));
-                console.log(weatherCityFound);
+                
+                weather = weatherCityFound
         }
-        
-        
+        //return weather
+        console.log(weather);
     }
     
     const handleDarkMode = () => {
@@ -48,4 +49,4 @@ const WeatherFinder = () => {
         </div>
     )
 }
-export default WeatherFinder
+export default WeatherAppHeader
