@@ -33,7 +33,7 @@ function App() {
                     .then(({ data }) => setWeatherCityFound((data)))
                     .catch((err) => console.log(err));
                 
-                    console.log(weatherCityFound);
+                    return weatherCityFound;
         }
     }
     useEffect(() => {
@@ -79,13 +79,20 @@ function App() {
                         </li>
                     </ul>
                 </section>
-            ) : (
+            ): weatherCityFound !== null ?
                 <>
                 <WeatherAppHeader />
-                <input onKeyUp={findCity} className="bg-[#52B5E8] shadow-[0px_4px_4px_0px_rgba(255,_255,_255,_0.25)_inset] w-60 h-12 rounded-lg placeholder-[#D5F3FF] placeholder:bg-[url('/lupa.png')] placeholder:bg-no-repeat outline-none  px-2 dark:bg-[#201F3C] dark:shadow-[0px_4.8546px_4.8546px_0px_rgba(0,_0,_0,_0.25)_inset] dark:placeholder-[#76749E] " type="text" placeholder="        Busca una ciudad" />
+                <input onKeyUp={findCity} className="bg-[#52B5E8] text-white shadow-[0px_4px_4px_0px_rgba(255,_255,_255,_0.25)_inset] w-60 h-12 rounded-lg placeholder-[#D5F3FF] placeholder:bg-[url('/lupa.png')] placeholder:bg-no-repeat outline-none  px-2 dark:bg-[#201F3C] dark:shadow-[0px_4.8546px_4.8546px_0px_rgba(0,_0,_0,_0.25)_inset] dark:placeholder-[#76749E] " type="text" placeholder="        Busca una ciudad" />
+                <WeatherContainer weather={weatherCityFound} />
+                </>            
+            : (
+                <>
+                <WeatherAppHeader />
+                <input onKeyUp={findCity} className="bg-[#52B5E8] text-white shadow-[0px_4px_4px_0px_rgba(255,_255,_255,_0.25)_inset] w-60 h-12 rounded-lg placeholder-[#D5F3FF] placeholder:bg-[url('/lupa.png')] placeholder:bg-no-repeat outline-none  px-2 dark:bg-[#201F3C] dark:shadow-[0px_4.8546px_4.8546px_0px_rgba(0,_0,_0,_0.25)_inset] dark:placeholder-[#76749E] " type="text" placeholder="        Busca una ciudad" />
                 <WeatherContainer weather={weather} />
                 </>
             )}
+            
             
         </main>
     );
