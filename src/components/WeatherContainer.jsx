@@ -20,15 +20,24 @@ const WeatherContainer = ({ weather }) => {
     }
 
     const weatherIcons = {
-        "clear sky" : "/clear_sky.svg",
-        "few clouds" : "/few_clouds.svg",
-        "scattered clouds" : "/scattered_clouds.svg",
-        "broken clouds" : "/broken_clouds.svg",
-        "shower rain" : "/shower_rain.svg",
-        "rain" : "/rain.svg",
-        "thunderstorm" : "/thunderstorm.svg",
-        "snow" : "/snow.svg",
-        "mist" : "/mist.svg",
+        "01d" : "/clear_sky.svg",
+        "01n" : "/clear_sky.svg",
+        "02d" : "/few_clouds.svg",
+        "02n" : "/few_clouds.svg",
+        "03d" : "/scattered_clouds.svg",
+        "03n" : "/scattered_clouds.svg",
+        "04d" : "/broken_clouds.svg",
+        "04n" : "/broken_clouds.svg",
+        "09d" : "/shower_rain.svg",
+        "09n" : "/shower_rain.svg",
+        "10d" : "/rain.svg",
+        "10n" : "/rain.svg",
+        "11d" : "/thunderstorm.svg",
+        "11n" : "/thunderstorm.svg",
+        "13d" : "/snow.svg",
+        "13n" : "/snow.svg",
+        "50d" : "/mist.svg",
+        "50n" : "/mist.svg",
     }
 
     return (
@@ -44,7 +53,7 @@ const WeatherContainer = ({ weather }) => {
                             <WeatherStats icon="/pressure.svg" value={weather.main.pressure} unit="hPA" />
                         </div>
                         <picture className="absolute -top-4 right-0  md:right-4">
-                            <img className="w-[140px] md:w-[160px]" src={weatherIcons[weather.weather[0].description]} alt="Weather Icon" />
+                            <img className="w-[140px] md:w-[160px]" src={weatherIcons[weather.weather[0].icon]} alt="Weather Icon" />
                         </picture>
                     </div>
                     <div className="w-full flex justify-between px-6 pb-5 font-semibold z-10 md:pb-8">
